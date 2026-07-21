@@ -1,0 +1,10 @@
+{
+  "name": "horoscope-galactic",
+  "private": true,
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

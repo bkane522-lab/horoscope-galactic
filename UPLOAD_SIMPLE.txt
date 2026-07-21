@@ -1,0 +1,16 @@
+PLAN SIMPLE
+
+1. Dézippe ce dossier.
+2. Dans GitHub, supprime/ignore l'ancien bazar si possible.
+3. Upload tout le contenu du dossier propre.
+4. Commit changes.
+5. Vercel -> Deployments -> Redeploy.
+6. Ouvre : https://horoscope-galactic.vercel.app/?reset=1
+7. Retourne sur PWABuilder avec : https://horoscope-galactic.vercel.app/
+
+PWABuilder :
+- App name : Horoscope Galactic
+- Short name : Galactic
+- Package ID : com.bkane522lab.horoscopegalactic
+
+Important : garde signing.keystore privé.
