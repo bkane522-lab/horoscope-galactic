@@ -1,6 +1,5 @@
-# Horoscope Galactic
+# Horoscope Galactic V2.1 Luxe Fixe
 
-Application PWA premium : horoscope quotidien, thème astral, compatibilité, numérologie et cristaux dans un univers royal gold.
+Version sans animations, avec UX royal gold, symboles astrologiques dorés, dashboard, message du jour et modules détaillés.
 
-## Upload
-Envoyer tout le contenu du dossier à la racine GitHub, puis redeploy Vercel.
+Upload le contenu du dossier à la racine GitHub, puis redeploy Vercel.
