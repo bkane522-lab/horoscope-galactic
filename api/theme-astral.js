@@ -1,8 +1,4 @@
-module.exports = function handler(req, res) {
-  const sign = (req.query.sign || "Lion").toString();
-  res.status(200).json({
-    sign,
-    title: "Thème astral",
-    text: `Le profil ${sign} met en lumière votre façon d’agir, de ressentir et d’entrer en relation.`
-  });
+module.exports = (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.json({ soleil: 'Signe choisi', lune: 'Intuition', ascendant: 'Présence', message: 'Lecture astrale prête à enrichir.' });
 };
