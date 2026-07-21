@@ -1,28 +1,20 @@
 # Horoscope Galactic
 
-Pack propre prêt pour GitHub, Vercel et PWABuilder.
+Pack premium prêt pour GitHub, Vercel et PWABuilder.
 
-## Fichiers importants
+Structure à uploader à la racine du repo :
+- index.html
+- manifest.json
+- sw.js
+- vercel.json
+- package.json
+- assets/
+- icons/
+- screenshots/
+- .well-known/
+- public/.well-known/
 
-- `index.html` : application complète.
-- `manifest.json` : configuration PWA.
-- `sw.js` : cache PWA.
-- `icon-192.png` et `icon-512.png` : icônes principales.
-- `icons/maskable-512.png` : icône Android maskable.
-- `.well-known/assetlinks.json` : lien Android pour l’ouverture plein écran.
-- `public/.well-known/assetlinks.json` : copie de sécurité.
-- `api/` : fonctions serveur Vercel.
-
-## PWABuilder
-
-App name : Horoscope Galactic
-Short name : Galactic
-Package ID : com.bkane522lab.horoscopegalactic
-
-## Après upload
-
-1. Commit changes.
-2. Vercel → Redeploy.
-3. Tester : https://horoscope-galactic.vercel.app/?reset=1
-4. Tester : https://horoscope-galactic.vercel.app/.well-known/assetlinks.json
-5. Refaire le package Android dans PWABuilder.
+PWABuilder :
+- App name : Horoscope Galactic
+- Short name : Galactic
+- Package ID : com.bkane522lab.horoscopegalactic

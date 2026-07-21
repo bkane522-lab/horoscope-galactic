@@ -1,52 +1,21 @@
 {
   "name": "Horoscope Galactic",
   "short_name": "Galactic",
-  "description": "Horoscope, thème astral, compatibilité, numérologie et cristaux dans un univers royal gold.",
-  "id": "/",
+  "description": "Horoscope quotidien, thème astral, compatibilité, numérologie et cristaux dans un univers royal gold.",
   "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
-  "display_override": ["standalone", "fullscreen", "minimal-ui", "browser"],
+  "display_override": ["standalone", "minimal-ui"],
   "orientation": "portrait-primary",
-  "background_color": "#02050a",
-  "theme_color": "#02050a",
+  "background_color": "#02050d",
+  "theme_color": "#030712",
   "categories": ["lifestyle", "entertainment"],
   "lang": "fr-FR",
-  "dir": "ltr",
   "icons": [
-    {
-      "src": "/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/maskable-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
+    {"src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
   ],
   "screenshots": [
-    {
-      "src": "/screenshots/home.png",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Accueil premium"
-    },
-    {
-      "src": "/screenshots/dashboard.png",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Ma galaxie"
-    }
+    {"src": "/screenshots/screenshot-mobile.png", "sizes": "1080x1920", "type": "image/png", "form_factor": "narrow", "label": "Horoscope Galactic"}
   ]
 }

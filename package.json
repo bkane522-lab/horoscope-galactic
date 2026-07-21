@@ -1,10 +1,7 @@
 {
   "name": "horoscope-galactic",
+  "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "start": "vercel dev"
-  },
-  "engines": {
-    "node": ">=18"
-  }
+  "scripts": { "start": "serve ." },
+  "dependencies": {}
 }
