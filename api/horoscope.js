@@ -1,5 +1,9 @@
-module.exports = (req, res) => {
-  const sign = (req.query.sign || 'Lion').toString();
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.json({ sign, message: `Cher ${sign}, votre ciel intérieur s’ouvre avec une vibration rare et lumineuse.`, conseil: 'Avancez avec calme et écoutez votre intuition.' });
+module.exports = async (req, res) => {
+  const sign = (req.query && req.query.sign) || 'Lion';
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  res.status(200).json({
+    sign,
+    message: `Cher ${sign}, aujourd’hui l’univers vous invite à ralentir pour mieux entendre votre véritable voix intérieure.`,
+    advice: 'Faites confiance à votre intuition, elle connaît le chemin.'
+  });
 };
