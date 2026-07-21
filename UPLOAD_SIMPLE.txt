@@ -1,5 +1,7 @@
-1. Décompresse le ZIP.
-2. Upload tout le CONTENU du dossier dans GitHub, pas le dossier entier.
-3. Garde les dossiers : assets, icons, screenshots, .well-known, public.
-4. Vercel : Deploy.
-5. PWABuilder : https://horoscope-galactic.vercel.app/
+UPLOAD SIMPLE
+
+1. Décompresser le ZIP.
+2. Envoyer le contenu à la racine GitHub.
+3. Garder exactement les dossiers : api, assets, icons, .well-known, public.
+4. Vercel -> Redeploy.
+5. Tester /manifest.json et /.well-known/assetlinks.json.

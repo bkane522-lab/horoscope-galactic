@@ -1,20 +1,6 @@
 # Horoscope Galactic
 
-Pack premium prêt pour GitHub, Vercel et PWABuilder.
+Application PWA premium : horoscope quotidien, thème astral, compatibilité, numérologie et cristaux dans un univers royal gold.
 
-Structure à uploader à la racine du repo :
-- index.html
-- manifest.json
-- sw.js
-- vercel.json
-- package.json
-- assets/
-- icons/
-- screenshots/
-- .well-known/
-- public/.well-known/
-
-PWABuilder :
-- App name : Horoscope Galactic
-- Short name : Galactic
-- Package ID : com.bkane522lab.horoscopegalactic
+## Upload
+Envoyer tout le contenu du dossier à la racine GitHub, puis redeploy Vercel.

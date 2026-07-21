@@ -1,7 +1,7 @@
 {
   "name": "horoscope-galactic",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "scripts": { "start": "serve ." },
-  "dependencies": {}
+  "description": "Horoscope Galactic PWA premium royal gold.",
+  "scripts": { "start": "npx serve ." }
 }
