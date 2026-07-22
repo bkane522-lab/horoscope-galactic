@@ -1,3 +1,6 @@
-Uploader le CONTENU du dossier, pas le dossier entier.
-Garder: index.html, manifest.json, sw.js, vercel.json, package.json, api, assets, icons, .well-known, public, screenshots.
-Supprimer anciens dossiers: icones, icone, anciens README v1.
+1. Dézipper.
+2. Uploader tout le contenu à la racine GitHub.
+3. Commit changes.
+4. Vercel redeploy.
+5. Vérifier https://horoscope-galactic.vercel.app/
+6. PWABuilder avec cette URL.

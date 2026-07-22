@@ -1,10 +1,14 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.bkane522lab.horoscopegalactic",
-      "sha256_cert_fingerprints": ["REMPLACE_PAR_LE_SHA256_PWABUILDER"]
+      "sha256_cert_fingerprints": [
+        "REMPLACE_AVEC_LE_SHA256_PWABUILDER"
+      ]
     }
   }
 ]

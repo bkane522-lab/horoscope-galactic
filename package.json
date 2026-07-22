@@ -1,1 +1,13 @@
-{"name":"horoscope-galactic","version":"2.1.0","private":true,"scripts":{"start":"vercel dev"}}
+{
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "build": "echo static"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {}
+}
