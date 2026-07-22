@@ -1,1 +1,6 @@
-Uploader le CONTENU du ZIP à la racine GitHub. Commit changes. Vercel redeploy automatique.
+1. Dézipper.
+2. Uploader tout le contenu à la racine GitHub.
+3. Commit changes.
+4. Vercel redeploy.
+5. Vérifier https://horoscope-galactic.vercel.app/
+6. PWABuilder avec cette URL.

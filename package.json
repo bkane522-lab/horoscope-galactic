@@ -1,6 +1,13 @@
 {
-  "name": "astro-galactic",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {}
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "build": "echo static"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {}
 }

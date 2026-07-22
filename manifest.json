@@ -1,18 +1,16 @@
 {
-  "name": "Astro Galactic",
+  "name": "Astro Galactic — Horoscope premium",
   "short_name": "Galactic",
-  "description": "Astro Galactic — horoscope quotidien, thème astral, compatibilité, numérologie et cristaux.",
-  "id": "/",
+  "description": "Votre rituel cosmique quotidien : horoscope, compatibilité, thème astral, numérologie et cristaux.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#030611",
-  "theme_color": "#030611",
   "orientation": "portrait-primary",
-  "lang": "fr-FR",
+  "background_color": "#020712",
+  "theme_color": "#020712",
   "categories": [
     "lifestyle",
-    "entertainment"
+    "productivity"
   ],
   "icons": [
     {
@@ -25,13 +23,15 @@
       "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
-    },
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
     {
-      "src": "/icons/icon-512.png",
-      "sizes": "512x512",
+      "src": "/screenshots/home.png",
+      "sizes": "1080x1920",
       "type": "image/png",
-      "purpose": "maskable"
+      "form_factor": "narrow"
     }
   ]
 }

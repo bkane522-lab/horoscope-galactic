@@ -1,3 +1,3 @@
-# Astro Galactic V5 Royal UX/UI
+# Astro Galactic V3 Premium
 
-Accueil plus compact, plus adulte, plus mobile, sans roue énorme ni symboles multicolores.
+Pack propre prêt pour GitHub, Vercel et PWABuilder. Uploader le contenu du dossier à la racine du repo.
