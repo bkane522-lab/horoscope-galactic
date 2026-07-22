@@ -1,1 +1,1 @@
-module.exports=(req,res)=>{res.setHeader('Content-Type','application/json');res.status(200).send(JSON.stringify([{relation:['delegate_permission/common.handle_all_urls'],target:{namespace:'android_app',package_name:'com.bkane522lab.horoscopegalactic',sha256_cert_fingerprints:['REMPLACE_PAR_LE_SHA256_PWABUILDER']}}],null,2));};
+export default function handler(req,res){res.status(200).json(require('../.well-known/assetlinks.json'))}
