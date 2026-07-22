@@ -1,10 +1,5 @@
 {
-  "version": 2,
-  "outputDirectory": ".",
-  "rewrites": [
-    {
-      "source": "/.well-known/assetlinks.json",
-      "destination": "/api/assetlinks.js"
-    }
-  ]
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": "."
 }
