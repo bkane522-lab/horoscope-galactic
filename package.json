@@ -2,7 +2,5 @@
   "name": "astro-galactic",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "build": "mkdir -p dist && cp index.html manifest.json sw.js package.json vercel.json assetlinks.json icon-192.png icon-512.png apple-touch-icon.png favicon-16.png favicon-32.png dist/ && cp -r icons assets api .well-known dist/"
-  }
+  "scripts": {}
 }
