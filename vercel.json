@@ -1,12 +1,10 @@
 {
+  "version": 2,
+  "outputDirectory": ".",
   "rewrites": [
     {
-      "source": "/api/assetlinks",
-      "destination": "/.well-known/assetlinks.json"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/.well-known/assetlinks.json",
+      "destination": "/api/assetlinks.js"
     }
   ]
 }
