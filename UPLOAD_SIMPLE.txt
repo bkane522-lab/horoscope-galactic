@@ -1,6 +1,1 @@
-1. Dézipper.
-2. Uploader tout le contenu à la racine GitHub.
-3. Commit changes.
-4. Vercel redeploy.
-5. Vérifier https://horoscope-galactic.vercel.app/
-6. PWABuilder avec cette URL.
+Décompresse le ZIP puis upload le CONTENU à la racine GitHub. Ensuite Vercel → Redeploy.

@@ -7,7 +7,7 @@
       "namespace": "android_app",
       "package_name": "com.bkane522lab.horoscopegalactic",
       "sha256_cert_fingerprints": [
-        "REMPLACE_AVEC_LE_SHA256_PWABUILDER"
+        "REPLACE_AVEC_LE_SHA256_PWABUILDER"
       ]
     }
   }

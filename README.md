@@ -1,3 +1,3 @@
-# Astro Galactic V3 Premium
+# Astro Galactic V4 UX/UI Premium
 
-Pack propre prêt pour GitHub, Vercel et PWABuilder. Uploader le contenu du dossier à la racine du repo.
+Version premium, stable, prête Vercel/PWABuilder.
