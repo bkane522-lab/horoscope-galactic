@@ -4,107 +4,74 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Astro Galactic</title>
-<meta name="description" content="Astro Galactic — horoscope, thème astral, compatibilité, numérologie et cristaux.">
 <meta name="theme-color" content="#030611">
+<meta name="description" content="Astro Galactic — horoscope premium, thème astral, compatibilité, numérologie et cristaux.">
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/icon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
 :root{
-  --bg:#030611;
-  --bg2:#071126;
-  --ink:#fff6df;
-  --soft:rgba(255,246,223,.70);
-  --muted:rgba(255,246,223,.50);
-  --gold:#f4c65d;
-  --gold2:#ffe8a7;
-  --bronze:#9f6817;
-  --line:rgba(244,198,93,.18);
-  --glass:rgba(8,15,31,.76);
-  --glass2:rgba(13,24,48,.70);
-  --safeTop:env(safe-area-inset-top,0px);
-  --safeBottom:env(safe-area-inset-bottom,0px);
+  --bg:#030611;--bg2:#071126;--gold:#f4c65d;--gold2:#ffe9aa;--text:#fff7df;
+  --soft:rgba(255,247,223,.70);--muted:rgba(255,247,223,.48);--line:rgba(244,198,93,.18);
+  --glass:rgba(7,14,29,.78);--safeTop:env(safe-area-inset-top,0px);--safeBottom:env(safe-area-inset-bottom,0px);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;height:100%;background:#000;color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow:hidden}
+html,body{margin:0;height:100%;background:#000;color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow:hidden}
+button,input,select{font:inherit}button{border:0;background:none;color:inherit}
 body{display:grid;place-items:center}
-button,input,select{font:inherit}
-button{border:0;color:inherit;background:none}
 .app{
-  position:relative;width:min(100vw,430px);height:100dvh;max-height:932px;overflow:hidden;background:
-  radial-gradient(circle at 50% -8%,rgba(244,198,93,.17),transparent 33%),
-  radial-gradient(circle at 4% 20%,rgba(68,96,170,.22),transparent 28%),
-  radial-gradient(circle at 100% 12%,rgba(244,198,93,.10),transparent 25%),
-  linear-gradient(180deg,#02040b 0%,#061024 46%,#02040b 100%);
+  width:min(100vw,430px);height:100dvh;max-height:932px;position:relative;overflow:hidden;background:
+  radial-gradient(circle at 50% -10%,rgba(244,198,93,.16),transparent 34%),
+  radial-gradient(circle at 15% 18%,rgba(65,93,168,.24),transparent 30%),
+  linear-gradient(180deg,#02040b 0%,#071126 55%,#02040b 100%);
 }
-@media(min-width:720px){.app{height:min(100vh,920px);border:1px solid rgba(244,198,93,.15);border-radius:36px}}
-.app:before{
-  content:"";position:absolute;inset:0;opacity:.46;pointer-events:none;
-  background-image:
-  radial-gradient(circle at 10% 10%,#ffe8a7 0 1px,transparent 1.6px),
-  radial-gradient(circle at 24% 31%,#ffe8a7 0 1px,transparent 1.6px),
-  radial-gradient(circle at 78% 12%,#ffe8a7 0 1px,transparent 1.6px),
-  radial-gradient(circle at 91% 38%,#ffe8a7 0 1px,transparent 1.6px),
-  radial-gradient(circle at 15% 62%,#ffe8a7 0 1px,transparent 1.6px),
-  radial-gradient(circle at 48% 54%,#ffe8a7 0 1px,transparent 1.6px),
-  radial-gradient(circle at 85% 74%,#ffe8a7 0 1px,transparent 1.6px),
-  radial-gradient(circle at 30% 88%,#ffe8a7 0 1px,transparent 1.6px);
+@media(min-width:720px){.app{height:min(100vh,920px);border-radius:36px;border:1px solid rgba(244,198,93,.16)}}
+.app:before{content:"";position:absolute;inset:0;opacity:.45;pointer-events:none;background-image:
+radial-gradient(circle at 10% 10%,#ffe9aa 0 1px,transparent 1.7px),
+radial-gradient(circle at 28% 22%,#ffe9aa 0 1px,transparent 1.7px),
+radial-gradient(circle at 78% 13%,#ffe9aa 0 1px,transparent 1.7px),
+radial-gradient(circle at 90% 41%,#ffe9aa 0 1px,transparent 1.7px),
+radial-gradient(circle at 16% 62%,#ffe9aa 0 1px,transparent 1.7px),
+radial-gradient(circle at 55% 71%,#ffe9aa 0 1px,transparent 1.7px),
+radial-gradient(circle at 84% 85%,#ffe9aa 0 1px,transparent 1.7px)}
+.page{
+  position:absolute;inset:0;display:none;height:100%;padding:calc(12px + var(--safeTop)) 16px calc(78px + var(--safeBottom));
+  overflow:hidden;
 }
-.page{position:absolute;inset:0;display:none;overflow:auto;padding:calc(13px + var(--safeTop)) 16px calc(86px + var(--safeBottom));scrollbar-width:none}
-.page::-webkit-scrollbar{display:none}
-.page.active{display:block}
-.top{
-  position:sticky;top:0;z-index:5;margin:-13px -16px 10px;padding:calc(13px + var(--safeTop)) 16px 10px;
-  display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(3,6,17,.98),rgba(3,6,17,.72),transparent);backdrop-filter:blur(12px)
-}
-.brand{display:flex;align-items:center;gap:10px}
-.logo{width:42px;height:42px;border-radius:15px;border:1px solid rgba(244,198,93,.22);box-shadow:0 0 30px rgba(244,198,93,.14)}
-.brand small{display:block;font-size:10px;letter-spacing:.28em;color:var(--gold);font-weight:800}
-.brand strong{display:block;font-family:Georgia,serif;font-size:25px;line-height:.92;color:var(--gold2)}
-.round{width:43px;height:43px;border-radius:16px;border:1px solid var(--line);display:grid;place-items:center;background:rgba(255,255,255,.035);color:var(--gold);font-size:20px}
+.page.active{display:grid;grid-template-rows:auto 1fr auto;gap:10px}
+.top{display:flex;align-items:center;justify-content:space-between;z-index:3}
+.brand{display:flex;align-items:center;gap:10px}.logo{width:42px;height:42px;border-radius:15px;border:1px solid var(--line);box-shadow:0 0 26px rgba(244,198,93,.13)}
+.brand small{display:block;font-size:10px;letter-spacing:.28em;color:var(--gold);font-weight:900}.brand strong{font-family:Georgia,serif;font-size:25px;line-height:.9;color:var(--gold2)}
+.menu{width:43px;height:43px;border-radius:16px;border:1px solid var(--line);display:grid;place-items:center;background:rgba(255,255,255,.035);color:var(--gold);font-size:22px}
+.homeBody{display:grid;grid-template-rows:auto auto 1fr;gap:10px;min-height:0}
 .hero{
-  position:relative;z-index:1;border:1px solid rgba(244,198,93,.19);border-radius:30px;padding:17px;background:
-  linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018)),
-  radial-gradient(circle at 88% 8%,rgba(244,198,93,.13),transparent 31%),
-  radial-gradient(circle at 8% 14%,rgba(62,92,170,.16),transparent 36%),
-  rgba(7,15,32,.74);
-  box-shadow:0 20px 55px rgba(0,0,0,.42);
+  border:1px solid rgba(244,198,93,.18);border-radius:28px;background:
+  radial-gradient(circle at 84% 8%,rgba(244,198,93,.12),transparent 34%),
+  linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.015)),rgba(6,14,31,.78);
+  padding:15px;box-shadow:0 18px 45px rgba(0,0,0,.34)
 }
-.heroTop{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.pill{height:31px;padding:0 11px;border:1px solid var(--line);border-radius:999px;display:inline-flex;align-items:center;gap:7px;color:var(--gold2);font-size:12px;background:rgba(255,255,255,.035)}
-.today{color:var(--muted);font-size:12px}
-.hero h1{font-family:Georgia,serif;font-size:34px;line-height:.98;margin:13px 0 8px;color:var(--gold2);letter-spacing:-.02em}
-.hero p{margin:0;color:var(--soft);font-size:14.5px;line-height:1.48;max-width:330px}
-.heroFoot{display:grid;grid-template-columns:92px 1fr;gap:13px;align-items:center;margin-top:16px}
-.orb{width:92px;height:92px;border-radius:50%;position:relative;display:grid;place-items:center;background:radial-gradient(circle at 38% 30%,#fff0b6,#f3c457 48%,#9b6518);color:#111;font-family:Georgia,serif;font-weight:900;font-size:25px;box-shadow:0 0 38px rgba(244,198,93,.33)}
-.orb:before,.orb:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(244,198,93,.24)}
-.orb:before{inset:-14px}.orb:after{inset:-28px}
-.cta{width:100%;height:56px;border-radius:18px;background:linear-gradient(180deg,#fff0b8,#f5c75d 54%,#b47619);color:#130c03;font-size:17px;font-weight:900;box-shadow:0 16px 35px rgba(244,198,93,.20),inset 0 1px rgba(255,255,255,.72)}
-.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0 0}
-.quick button{height:70px;border:1px solid rgba(244,198,93,.16);border-radius:20px;background:rgba(255,255,255,.032);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--soft);font-size:12px}
-.quick b{font-family:Georgia,serif;color:var(--gold2);font-size:18px;margin-bottom:4px}
-.title{display:flex;align-items:end;justify-content:space-between;margin:17px 2px 10px}
-.title h2{margin:0;font-family:Georgia,serif;color:var(--gold2);font-size:25px}.title span{color:var(--muted);font-size:12px}
-.dailyCard{border:1px solid rgba(244,198,93,.17);border-radius:26px;padding:16px;background:linear-gradient(180deg,rgba(255,255,255,.052),rgba(255,255,255,.018));box-shadow:0 14px 38px rgba(0,0,0,.25)}
-.message{font-family:Georgia,serif;color:var(--gold2);font-size:25px;line-height:1.13;margin:0 0 9px}
-.text{color:var(--soft);font-size:14.5px;line-height:1.55;margin:0}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:13px}
-.stat{border:1px solid rgba(244,198,93,.15);border-radius:18px;padding:10px 5px;text-align:center;background:rgba(0,0,0,.14)}
-.stat b{display:block;color:var(--gold2);font-family:Georgia,serif;font-size:20px}.stat span{font-size:11px;color:var(--muted)}
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.card{border:1px solid rgba(244,198,93,.15);border-radius:23px;padding:14px;min-height:125px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.018));box-shadow:0 12px 30px rgba(0,0,0,.20)}
-.card b{width:42px;height:42px;border-radius:15px;border:1px solid rgba(244,198,93,.22);display:grid;place-items:center;color:var(--gold2);font-family:Georgia,serif;font-size:16px;margin-bottom:9px}
-.card h3{font-size:15.5px;margin:0 0 5px;color:#fff0c8}.card p{margin:0;color:var(--muted);font-size:12.4px;line-height:1.38}
-.wide{grid-column:span 2}
-.energyRows{display:grid;gap:10px}
-.row{display:grid;grid-template-columns:76px 1fr 42px;gap:9px;align-items:center;color:#fff0c8;font-size:13px}
-.bar{height:8px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#946114,#f5c75d,#ffe8a7);border-radius:999px}
-.nav{position:absolute;left:12px;right:12px;bottom:calc(10px + var(--safeBottom));height:64px;border:1px solid rgba(244,198,93,.16);border-radius:24px;background:rgba(3,7,17,.88);backdrop-filter:blur(16px);display:grid;grid-template-columns:repeat(5,1fr);z-index:10;box-shadow:0 20px 45px rgba(0,0,0,.36)}
-.nav button{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;color:rgba(255,246,223,.58);font-size:10.5px}.nav b{font-family:Georgia,serif;font-size:16px;color:var(--gold2)}.nav button.active{color:#fff6df}
-.head{display:flex;gap:11px;align-items:center;margin-bottom:12px}.head h2{margin:0;font-family:Georgia,serif;font-size:30px;color:var(--gold2)}.head p{margin:2px 0 0;color:var(--muted);font-size:13px}
-.premium{margin-top:12px;border:1px solid rgba(244,198,93,.22);border-radius:26px;padding:15px;background:radial-gradient(circle at 50% 0%,rgba(244,198,93,.14),transparent 44%),rgba(5,11,24,.78)}
-.premium h3{font-family:Georgia,serif;color:var(--gold2);font-size:21px;margin:0 0 8px}.premium ul{margin:8px 0 0;padding-left:17px;color:var(--soft);font-size:13px;line-height:1.55}
-.field{margin:12px 0}.field label{display:block;color:#fff0c8;font-size:13px;margin-bottom:7px}.field input,.field select{width:100%;height:52px;border-radius:17px;border:1px solid rgba(244,198,93,.18);background:rgba(0,0,0,.18);color:#fff6df;padding:0 13px}
+.heroLine{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}.tag{height:29px;border:1px solid var(--line);border-radius:999px;padding:0 10px;display:flex;align-items:center;color:var(--gold2);font-size:12px;background:rgba(255,255,255,.035)}.date{color:var(--muted);font-size:12px}
+.hero h1{font-family:Georgia,serif;font-size:30px;line-height:1;margin:0 0 7px;color:var(--gold2);letter-spacing:-.02em}
+.hero p{margin:0;color:var(--soft);font-size:14px;line-height:1.42}
+.heroAction{display:grid;grid-template-columns:74px 1fr;gap:12px;align-items:center;margin-top:12px}
+.orb{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 28%,#fff0b7,#f4c65d 52%,#a36a18);color:#111;font-family:Georgia,serif;font-size:22px;font-weight:900;box-shadow:0 0 32px rgba(244,198,93,.28);position:relative}.orb:before{content:"";position:absolute;inset:-12px;border:1px solid rgba(244,198,93,.22);border-radius:50%}
+.cta{height:54px;border-radius:18px;background:linear-gradient(180deg,#fff0b7,#f4c65d 55%,#ad721a);color:#120b03;font-weight:900;font-size:16px;box-shadow:0 14px 30px rgba(244,198,93,.18),inset 0 1px rgba(255,255,255,.7)}
+.message{
+  border:1px solid rgba(244,198,93,.16);border-radius:25px;background:rgba(7,14,29,.66);padding:14px;
+}
+.messageTop{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}.messageTop h2{font-family:Georgia,serif;color:var(--gold2);font-size:22px;margin:0}.messageTop span{font-size:12px;color:var(--muted)}
+.message p{margin:0;color:var(--soft);font-size:14px;line-height:1.43}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:10px}.stat{border:1px solid rgba(244,198,93,.14);border-radius:16px;background:rgba(0,0,0,.12);padding:8px 4px;text-align:center}.stat b{display:block;font-family:Georgia,serif;color:var(--gold2);font-size:18px}.stat span{font-size:10.5px;color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;min-height:0}.feature{min-height:72px;border:1px solid rgba(244,198,93,.15);border-radius:19px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.feature b{font-family:Georgia,serif;color:var(--gold2);font-size:17px;margin-bottom:3px}.feature span{color:var(--muted);font-size:11.5px}
+.nav{height:62px;border:1px solid rgba(244,198,93,.16);border-radius:23px;background:rgba(3,7,16,.86);backdrop-filter:blur(15px);display:grid;grid-template-columns:repeat(5,1fr);z-index:10;box-shadow:0 18px 45px rgba(0,0,0,.36);margin-bottom:calc(2px + var(--safeBottom))}
+.nav button{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;color:rgba(255,247,223,.58);font-size:10.5px}.nav b{font-family:Georgia,serif;font-size:15px;color:var(--gold2)}.nav button.active{color:#fff7df}
+.inner{display:grid;grid-template-rows:auto 1fr;gap:12px;min-height:0}.head{display:flex;align-items:center;gap:10px}.back{width:42px;height:42px;border-radius:16px;border:1px solid var(--line);color:var(--gold);font-size:24px;background:rgba(255,255,255,.035)}.head h2{margin:0;font-family:Georgia,serif;font-size:29px;color:var(--gold2)}.head p{margin:2px 0 0;color:var(--muted);font-size:12.5px}
+.sheet{border:1px solid rgba(244,198,93,.17);border-radius:28px;background:rgba(7,14,29,.72);padding:16px;overflow:hidden}.sheet h3{font-family:Georgia,serif;font-size:26px;line-height:1.1;margin:0 0 9px;color:var(--gold2)}.sheet p{margin:0;color:var(--soft);font-size:15px;line-height:1.55}.list{display:grid;gap:8px;margin-top:14px}.li{height:47px;border-radius:16px;border:1px solid rgba(244,198,93,.14);display:flex;align-items:center;justify-content:space-between;padding:0 12px;background:rgba(0,0,0,.12);font-size:13px;color:var(--soft)}.li b{color:var(--gold2)}
+.field{margin:12px 0}.field label{display:block;color:var(--gold2);font-size:13px;margin-bottom:7px}.field input,.field select{width:100%;height:52px;border-radius:17px;border:1px solid rgba(244,198,93,.17);background:rgba(0,0,0,.16);color:#fff7df;padding:0 13px}
+@media(max-height:760px){
+  .page{padding-top:calc(9px + var(--safeTop));padding-left:14px;padding-right:14px;padding-bottom:calc(70px + var(--safeBottom));gap:7px}
+  .logo{width:36px;height:36px}.brand strong{font-size:22px}.menu{width:38px;height:38px}.hero{padding:12px;border-radius:24px}.hero h1{font-size:25px}.hero p{font-size:12.8px}.heroAction{grid-template-columns:62px 1fr;margin-top:9px}.orb{width:62px;height:62px;font-size:19px}.cta{height:48px;font-size:15px}.message{padding:11px}.messageTop h2{font-size:20px}.message p{font-size:12.7px}.stats{gap:5px}.stat{padding:6px 3px}.stat b{font-size:16px}.feature{min-height:58px}.nav{height:58px}
+}
 </style>
 </head>
 <body>
@@ -112,77 +79,75 @@ button{border:0;color:inherit;background:none}
 <section id="home" class="page active">
   <div class="top">
     <div class="brand"><img class="logo" src="/icon-192.png" alt=""><div><small>ASTRO</small><strong>Galactic</strong></div></div>
-    <button class="round" onclick="go('profile')">☰</button>
+    <button class="menu" onclick="go('profile')">≡</button>
   </div>
 
-  <div class="hero">
-    <div class="heroTop"><span class="pill">✦ Guidance royale</span><span class="today" id="todaySmall">Aujourd’hui</span></div>
-    <h1>Votre message astral du jour</h1>
-    <p>Une lecture claire, élégante et personnalisée pour savoir où poser votre énergie aujourd’hui.</p>
-    <div class="heroFoot">
-      <div class="orb" id="orb">LIO</div>
-      <button class="cta" onclick="openDaily()">Lire ma guidance</button>
+  <div class="homeBody">
+    <div class="hero">
+      <div class="heroLine"><span class="tag">✦ Guidance royale</span><span class="date" id="smallDate">Aujourd’hui</span></div>
+      <h1>Votre ciel du jour</h1>
+      <p>Une guidance claire pour poser la bonne énergie, sans surcharge.</p>
+      <div class="heroAction">
+        <div class="orb" id="orb">LIO</div>
+        <button class="cta" onclick="go('daily')">Lire ma guidance</button>
+      </div>
+    </div>
+
+    <div class="message">
+      <div class="messageTop"><h2>Ralentir pour viser juste</h2><span id="signLabel">Lion</span></div>
+      <p>Le ciel vous demande de couper le bruit. Une action simple peut remettre votre journée dans le bon axe.</p>
+      <div class="stats">
+        <div class="stat"><b>87</b><span>Amour</span></div>
+        <div class="stat"><b>72</b><span>Argent</span></div>
+        <div class="stat"><b>90</b><span>Humeur</span></div>
+        <div class="stat"><b>85</b><span>Énergie</span></div>
+      </div>
+    </div>
+
+    <div class="features">
+      <button class="feature" onclick="go('theme')"><b>TH</b><span>Thème</span></button>
+      <button class="feature" onclick="go('compat')"><b>AM</b><span>Amour</span></button>
+      <button class="feature" onclick="go('numbers')"><b>07</b><span>Nombres</span></button>
+      <button class="feature" onclick="go('crystals')"><b>CR</b><span>Cristaux</span></button>
     </div>
   </div>
 
-  <div class="quick">
+  <nav class="nav">
+    <button class="active" onclick="go('home')"><b>★</b>Accueil</button>
+    <button onclick="go('daily')"><b>MSG</b>Message</button>
     <button onclick="go('theme')"><b>TH</b>Thème</button>
     <button onclick="go('compat')"><b>AM</b>Amour</button>
-    <button onclick="go('numbers')"><b>07</b>Nombres</button>
-    <button onclick="go('crystals')"><b>CR</b>Cristaux</button>
-  </div>
-
-  <div class="title"><h2>Ma galaxie</h2><span id="signLabel">Lion</span></div>
-  <div class="dailyCard">
-    <h2 class="message">Ralentir pour mieux viser</h2>
-    <p class="text">Le ciel vous demande de couper le bruit. Une décision simple, posée avec calme, peut remettre toute votre journée dans le bon axe.</p>
-    <div class="stats">
-      <div class="stat"><b>87%</b><span>Amour</span></div>
-      <div class="stat"><b>72%</b><span>Argent</span></div>
-      <div class="stat"><b>90%</b><span>Humeur</span></div>
-      <div class="stat"><b>85%</b><span>Énergie</span></div>
-    </div>
-  </div>
-
-  <div class="title"><h2>Explorer</h2><span>premium</span></div>
-  <div class="cards">
-    <button class="card" onclick="openDaily()"><b>MSG</b><h3>Horoscope</h3><p>Votre message, votre humeur et vos opportunités.</p></button>
-    <button class="card" onclick="go('compat')"><b>AM</b><h3>Compatibilité</h3><p>Affinités du jour et vibration relationnelle.</p></button>
-    <button class="card" onclick="go('theme')"><b>AST</b><h3>Thème astral</h3><p>Portrait céleste plus profond et personnel.</p></button>
-    <button class="card" onclick="go('numbers')"><b>NUM</b><h3>Numérologie</h3><p>Nombre, cycle et intention du jour.</p></button>
-  </div>
+    <button onclick="go('profile')"><b>◎</b>Profil</button>
+  </nav>
 </section>
 
 <section id="daily" class="page">
-  <div class="top"><div class="head"><button class="round" onclick="go('home')">‹</button><div><h2>Message</h2><p>Guidance cosmique</p></div></div></div>
-  <div class="dailyCard"><div class="today" id="todayFull">Aujourd’hui</div><h2 class="message">Votre vraie force revient quand vous ralentissez.</h2><p class="text">Aujourd’hui, l’univers vous invite à écouter votre voix intérieure. Ne cherchez pas à tout forcer : ce qui est juste va se placer avec plus de naturel si vous restez aligné.</p><div class="stats"><div class="stat"><b>7</b><span>Nombre</span></div><div class="stat"><b>Or</b><span>Couleur</span></div><div class="stat"><b>Citrine</b><span>Pierre</span></div><div class="stat"><b>Taureau</b><span>Affinité</span></div></div></div>
-  <div class="premium"><h3>Conseil complet</h3><ul><li>Amour : parler simple, sans surjouer</li><li>Travail : choisir une priorité forte</li><li>Soir : couper les écrans plus tôt</li></ul></div>
+  <div class="inner">
+    <div class="head"><button class="back" onclick="go('home')">‹</button><div><h2>Message</h2><p id="fullDate">Aujourd’hui</p></div></div>
+    <div class="sheet"><h3>Votre vraie force revient quand vous ralentissez.</h3><p>Aujourd’hui, l’univers vous invite à écouter votre voix intérieure. Ne cherchez pas à tout forcer : ce qui est juste va se placer naturellement si vous restez aligné.</p><div class="list"><div class="li"><span>Nombre</span><b>7</b></div><div class="li"><span>Couleur</span><b>Or solaire</b></div><div class="li"><span>Pierre</span><b>Citrine</b></div><div class="li"><span>Affinité</span><b>Taureau</b></div></div></div>
+  </div>
+  <nav class="nav"><button onclick="go('home')"><b>★</b>Accueil</button><button class="active" onclick="go('daily')"><b>MSG</b>Message</button><button onclick="go('theme')"><b>TH</b>Thème</button><button onclick="go('compat')"><b>AM</b>Amour</button><button onclick="go('profile')"><b>◎</b>Profil</button></nav>
 </section>
 
-<section id="theme" class="page"><div class="top"><div class="head"><button class="round" onclick="go('home')">‹</button><div><h2>Thème astral</h2><p>Portrait céleste</p></div></div></div><div class="dailyCard"><h2 class="message">Votre signature intérieure</h2><p class="text">Votre carte astrale devient un miroir : lumière, instinct, émotion et direction. Cette section est prête pour une lecture plus complète.</p></div><div class="premium"><h3>Lecture premium</h3><ul><li>Soleil, lune et ascendant</li><li>Maisons astrales</li><li>Forces et zones d’évolution</li></ul></div></section>
-<section id="compat" class="page"><div class="top"><div class="head"><button class="round" onclick="go('home')">‹</button><div><h2>Compatibilité</h2><p>Affinités</p></div></div></div><div class="dailyCard"><h2 class="message">Une connexion douce mais exigeante.</h2><p class="text">La bonne énergie vient d’une relation qui ne vous oblige pas à vous réduire. Cherchez l’équilibre entre écoute et vérité.</p></div><div class="premium"><h3>Analyse relationnelle</h3><ul><li>Score émotionnel</li><li>Attraction</li><li>Communication</li><li>Conseil du duo</li></ul></div></section>
-<section id="numbers" class="page"><div class="top"><div class="head"><button class="round" onclick="go('home')">‹</button><div><h2>Numérologie</h2><p>Nombre du jour</p></div></div></div><div class="dailyCard"><div class="orb" style="margin:0 auto 14px">7</div><h2 class="message">Observation et intuition</h2><p class="text">Le 7 vous invite à écouter, analyser et comprendre avant d’agir. C’est une énergie de profondeur.</p></div></section>
-<section id="crystals" class="page"><div class="top"><div class="head"><button class="round" onclick="go('home')">‹</button><div><h2>Cristaux</h2><p>Pierre du jour</p></div></div></div><div class="dailyCard"><h2 class="message">Citrine solaire</h2><p class="text">Pierre de clarté, confiance et passage à l’action. Elle accompagne les décisions simples et assumées.</p></div></section>
-<section id="profile" class="page"><div class="top"><div class="head"><button class="round" onclick="go('home')">‹</button><div><h2>Profil</h2><p>Votre ciel</p></div></div></div><div class="dailyCard"><div class="field"><label>Date de naissance</label><input id="birth" type="date"></div><div class="field"><label>Signe astrologique</label><select id="signSelect"></select></div><button class="cta" onclick="saveProfile()">Enregistrer</button></div></section>
+<section id="theme" class="page"><div class="inner"><div class="head"><button class="back" onclick="go('home')">‹</button><div><h2>Thème</h2><p>Portrait astral</p></div></div><div class="sheet"><h3>Votre signature intérieure</h3><p>Votre carte astrale devient un miroir : lumière, instinct, émotion et direction. La version complète ajoutera lune, ascendant et maisons.</p><div class="list"><div class="li"><span>Soleil</span><b id="themeSign">Lion</b></div><div class="li"><span>Élément</span><b>Feu</b></div><div class="li"><span>Force</span><b>Rayonnement</b></div></div></div></div><nav class="nav"><button onclick="go('home')"><b>★</b>Accueil</button><button onclick="go('daily')"><b>MSG</b>Message</button><button class="active" onclick="go('theme')"><b>TH</b>Thème</button><button onclick="go('compat')"><b>AM</b>Amour</button><button onclick="go('profile')"><b>◎</b>Profil</button></nav></section>
 
-<nav class="nav">
-  <button class="active" onclick="go('home')"><b>★</b>Accueil</button>
-  <button onclick="openDaily()"><b>MSG</b>Message</button>
-  <button onclick="go('theme')"><b>AST</b>Thème</button>
-  <button onclick="go('compat')"><b>AM</b>Amour</button>
-  <button onclick="go('profile')"><b>◎</b>Profil</button>
-</nav>
+<section id="compat" class="page"><div class="inner"><div class="head"><button class="back" onclick="go('home')">‹</button><div><h2>Amour</h2><p>Compatibilité</p></div></div><div class="sheet"><h3>Une connexion douce, mais vraie.</h3><p>La bonne énergie vient d’une relation qui ne vous oblige pas à vous réduire. Cherchez l’équilibre entre écoute et vérité.</p><div class="list"><div class="li"><span>Affinité</span><b>Taureau</b></div><div class="li"><span>Vibration</span><b>87%</b></div><div class="li"><span>Conseil</span><b>Parler simple</b></div></div></div></div><nav class="nav"><button onclick="go('home')"><b>★</b>Accueil</button><button onclick="go('daily')"><b>MSG</b>Message</button><button onclick="go('theme')"><b>TH</b>Thème</button><button class="active" onclick="go('compat')"><b>AM</b>Amour</button><button onclick="go('profile')"><b>◎</b>Profil</button></nav></section>
+
+<section id="numbers" class="page"><div class="inner"><div class="head"><button class="back" onclick="go('home')">‹</button><div><h2>Nombres</h2><p>Numérologie</p></div></div><div class="sheet"><div class="orb" style="margin:0 auto 14px">7</div><h3>Observation et intuition</h3><p>Le 7 invite à écouter, analyser et comprendre avant d’agir. C’est une énergie de profondeur.</p></div></div><nav class="nav"><button onclick="go('home')"><b>★</b>Accueil</button><button onclick="go('daily')"><b>MSG</b>Message</button><button onclick="go('theme')"><b>TH</b>Thème</button><button onclick="go('compat')"><b>AM</b>Amour</button><button onclick="go('profile')"><b>◎</b>Profil</button></nav></section>
+
+<section id="crystals" class="page"><div class="inner"><div class="head"><button class="back" onclick="go('home')">‹</button><div><h2>Cristaux</h2><p>Pierre du jour</p></div></div><div class="sheet"><h3>Citrine solaire</h3><p>Pierre de clarté, confiance et passage à l’action. Elle accompagne les décisions simples et assumées.</p><div class="list"><div class="li"><span>Couleur</span><b>Or solaire</b></div><div class="li"><span>Rituel</span><b>60 secondes</b></div></div></div></div><nav class="nav"><button onclick="go('home')"><b>★</b>Accueil</button><button onclick="go('daily')"><b>MSG</b>Message</button><button onclick="go('theme')"><b>TH</b>Thème</button><button onclick="go('compat')"><b>AM</b>Amour</button><button onclick="go('profile')"><b>◎</b>Profil</button></nav></section>
+
+<section id="profile" class="page"><div class="inner"><div class="head"><button class="back" onclick="go('home')">‹</button><div><h2>Profil</h2><p>Votre ciel</p></div></div><div class="sheet"><div class="field"><label>Date de naissance</label><input id="birth" type="date"></div><div class="field"><label>Signe astrologique</label><select id="sign"></select></div><button class="cta" onclick="save()">Enregistrer</button></div></div><nav class="nav"><button onclick="go('home')"><b>★</b>Accueil</button><button onclick="go('daily')"><b>MSG</b>Message</button><button onclick="go('theme')"><b>TH</b>Thème</button><button onclick="go('compat')"><b>AM</b>Amour</button><button class="active" onclick="go('profile')"><b>◎</b>Profil</button></nav></section>
 </main>
 
 <script>
 const signs=[["Bélier","BEL"],["Taureau","TAU"],["Gémeaux","GEM"],["Cancer","CAN"],["Lion","LIO"],["Vierge","VIR"],["Balance","BAL"],["Scorpion","SCO"],["Sagittaire","SAG"],["Capricorne","CAP"],["Verseau","VER"],["Poissons","POI"]];
-const storage="astro-galactic-v5-profile";let profile=JSON.parse(localStorage.getItem(storage)||'{"sign":"Lion","birth":""}');const $=s=>document.querySelector(s);
-function code(n){return (signs.find(s=>s[0]===n)||signs[4])[1]}
-function go(id){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));$("#"+id).classList.add("active");document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));if(id==="home")document.querySelector(".nav button").classList.add("active")}
-function openDaily(){const d=new Date();$("#todayFull").textContent=d.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});go("daily")}
-function saveProfile(){profile.birth=$("#birth").value;profile.sign=$("#signSelect").value;localStorage.setItem(storage,JSON.stringify(profile));refresh();go("home")}
-function refresh(){if($("#orb"))$("#orb").textContent=code(profile.sign);if($("#signLabel"))$("#signLabel").textContent=profile.sign;if($("#birth"))$("#birth").value=profile.birth||"";if($("#signSelect"))$("#signSelect").value=profile.sign;$("#todaySmall").textContent=new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"long"})}
-const sel=$("#signSelect");signs.forEach(([n])=>{const o=document.createElement("option");o.value=n;o.textContent=n;sel.appendChild(o)});refresh();
+const key="astro-galactic-v6-profile";let p=JSON.parse(localStorage.getItem(key)||'{"sign":"Lion","birth":""}');const $=s=>document.querySelector(s);
+function code(n){return (signs.find(x=>x[0]===n)||signs[4])[1]}
+function go(id){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));$("#"+id).classList.add("active")}
+function save(){p.birth=$("#birth").value;p.sign=$("#sign").value;localStorage.setItem(key,JSON.stringify(p));refresh();go("home")}
+function refresh(){const d=new Date();$("#smallDate").textContent=d.toLocaleDateString("fr-FR",{day:"numeric",month:"long"});$("#fullDate").textContent=d.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"});$("#orb").textContent=code(p.sign);$("#signLabel").textContent=p.sign;$("#themeSign").textContent=p.sign;$("#birth").value=p.birth||"";$("#sign").value=p.sign}
+signs.forEach(([name])=>{const o=document.createElement("option");o.value=name;o.textContent=name;$("#sign").appendChild(o)});refresh();
 if("serviceWorker"in navigator){navigator.serviceWorker.register("/sw.js").catch(()=>{})}
 </script>
 </body>
