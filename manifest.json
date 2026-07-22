@@ -1,13 +1,13 @@
 {
   "name": "Astro Galactic",
   "short_name": "Galactic",
-  "description": "Astro Galactic — horoscope quotidien dans un univers royal gold.",
+  "description": "Astro Galactic — horoscope quotidien, thème astral, compatibilité, numérologie et cristaux.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#05070f",
-  "theme_color": "#05070f",
+  "background_color": "#030611",
+  "theme_color": "#030611",
   "orientation": "portrait-primary",
   "lang": "fr-FR",
   "categories": [

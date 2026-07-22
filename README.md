@@ -1,3 +1,3 @@
-# Astro Galactic V4 UX/UI Premium
+# Astro Galactic V5 Royal UX/UI
 
-Version premium, stable, prête Vercel/PWABuilder.
+Accueil plus compact, plus adulte, plus mobile, sans roue énorme ni symboles multicolores.
